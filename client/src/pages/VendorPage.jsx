@@ -145,8 +145,7 @@ export default function VendorPage() {
     }
   };
 
-  const handleDelete = async (index) => {
-    const vendor = vendorsObjectsPerUser[index];
+  const handleDelete = async (vendor) => {
     if (!vendor) return;
     if (window.confirm('Delete this vendor?')) {
       try {
@@ -154,9 +153,10 @@ export default function VendorPage() {
           withCredentials: true,
         });
         toast.success('Vendor deleted!');
+        console.log('Deleting vendor', vendor);
         setVendorsObjectsPerUser((prev) => prev.filter((v) => v._id !== vendor._id));
+        console.log('deleted vendor', vendor);
       } catch (err) {
-        console.error('Delete vendor error:', err);
         toast.error(err.response?.data?.message || 'Failed to delete vendor');
       }
     }
