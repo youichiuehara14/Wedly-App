@@ -22,6 +22,7 @@ const TaskCard = ({ task, id, onClick }) => {
     ? (task.checklists.filter((item) => item.isCompleted).length / task.checklists.length) * 100
     : 0;
 
+  // Determine background color based on priority
   const priorityBgColor =
     task.priority === 'High'
       ? 'bg-red-400'
@@ -64,17 +65,8 @@ const TaskCard = ({ task, id, onClick }) => {
             ></div>
           </div>
         </div>
-        <div className="flex items-center mt-2 justify-between">
-          <p className="text-black text-xs sm:text-sm ">
-            Php{' '}
-            {isNaN(Number(task.cost)) || task.cost === null || task.cost === undefined
-              ? '0.00'
-              : Number(task.cost).toLocaleString(undefined, {
-                  minimumFractionDigits: 2,
-                  maximumFractionDigits: 2,
-                })}
-          </p>
-
+        <div className="flex items-center mt-2 justify-between  ">
+          <p className="text-black text-xs sm:text-sm ">Php {Number(task.cost).toLocaleString()}</p>
           <p
             className={`text-[11px] font-medium ${
               dueDate > currentDate
