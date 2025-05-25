@@ -38,7 +38,7 @@ const app = express();
 const server = http.createServer(app);
 const allowedOrigins =
   process.env.NODE_ENV === 'production'
-    ? [process.env.FRONTEND_URL || 'https://wedlyapp.onrender.com']
+    ? [process.env.FRONTEND_URL || 'https://wedly-app.onrender.com']
     : ['http://localhost:5173'];
 
 const io = new Server(server, {
