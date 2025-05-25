@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 
 import Login from './pages/Login';
-import HomePage from './pages/HomePage'; // This is your layout
+import HomePage from './pages/HomePage';
 import LandingPage from './pages/LandingPage';
 import ForgotPassword from './pages/ForgotPassword';
 import ChangePassword from './pages/ChangePassword';
@@ -15,6 +15,7 @@ import OverviewPage from './pages/OverviewPage';
 import BoardsPage from './pages/BoardsPage';
 import GlobalChatPage from './pages/GlobalChatPage';
 import GuestPage from './pages/GuestPage';
+import AIPage from './pages/AI-Page';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path="guest" element={<GuestPage />} />
           <Route path="boards" element={<BoardsPage />} />
           <Route path="messages" element={<GlobalChatPage />} />
+          <Route path="ai" element={<AIPage />} />
           <Route path="account" element={<AccountPage />} />
           <Route path="change-password" element={<ChangePassword />} />
         </Route>
