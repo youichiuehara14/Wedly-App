@@ -11,6 +11,7 @@ import {
   ChevronsRight,
   UserRound,
   User,
+  Sparkles,
 } from 'lucide-react';
 import { useContext, useState } from 'react';
 import { Context } from '../Context';
@@ -61,12 +62,11 @@ const Sidebar = () => {
     }
   };
 
-  // Get first letter of user's first name
   const profileLetter = user?.firstName?.charAt(0).toUpperCase() || '?';
 
   return (
     <div
-      className={`bg-[#565a47] hidden xl:flex flex-col  justify-between h-full  ${
+      className={`bg-[#565a47] hidden xl:flex flex-col justify-between h-full ${
         collapsed ? 'w-20' : 'w-60'
       } transition-all duration-300 border-r border-[#17171721]`}
     >
@@ -83,14 +83,14 @@ const Sidebar = () => {
 
         <div className="flex flex-col items-center mb-4">
           <div
-            className={`w-16 h-16 bg-blue-700 text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-md  ${
+            className={`w-16 h-16 bg-blue-700 text-white rounded-full flex items-center justify-center text-2xl font-bold shadow-md ${
               collapsed ? 'text-xl w-12 h-12' : ''
             }`}
           >
             {profileLetter}
           </div>
           {!collapsed && (
-            <span className="mt-2 text-sm font-semibold  text-white">{user?.firstName}</span>
+            <span className="mt-2 text-sm font-semibold text-white">{user?.firstName}</span>
           )}
         </div>
       </div>
@@ -114,6 +114,8 @@ const Sidebar = () => {
             label="Messages"
             collapsed={collapsed}
           />
+
+          <SidebarItem to="/home/ai" icon={Sparkles} label="AI Suggestions" collapsed={collapsed} />
         </ul>
       </div>
 
