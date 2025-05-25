@@ -75,7 +75,7 @@ const Sidebar = () => {
         <div className="flex justify-end p-3">
           <button
             onClick={() => setCollapsed(!collapsed)}
-            className="text-gray-600 hover:text-orange-400 transition cursor-pointer"
+            className="text-white hover:text-orange-400 transition cursor-pointer"
           >
             {collapsed ? <ChevronsRight /> : <ChevronsLeft />}
           </button>
