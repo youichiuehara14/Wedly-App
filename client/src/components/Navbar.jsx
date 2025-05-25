@@ -172,14 +172,14 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li className="cursor-pointer font-medium flex gap-4 items-center">
-                <MessageSquareMore strokeWidth={1} />
+                <Sparkles strokeWidth={1} />
                 <NavLink to="/home/messages" onClick={toggleMobileMenu}>
                   AI Suggestions
                 </NavLink>
               </li>
               <hr className="my-6 border-gray-300" />
               <li className="cursor-pointer font-medium flex gap-4 items-center">
-                <Sparkles strokeWidth={1} />
+                <UserRoundCog strokeWidth={1} />
                 <NavLink to="/home/account" onClick={toggleMobileMenu}>
                   Profile
                 </NavLink>
