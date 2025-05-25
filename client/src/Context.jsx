@@ -13,6 +13,7 @@ export const ContextProvider = ({ children }) => {
   const [activeBoardObject, setActiveBoardObject] = useState(null);
   const [tasksPerBoard, setTasksPerBoard] = useState([]);
   const [loading, setLoading] = useState(true);
+
   const [guestsObjects, setGuestsObjects] = useState([]);
   const socket = io(BASE_URL, {
     withCredentials: true,
@@ -120,7 +121,7 @@ export const ContextProvider = ({ children }) => {
       setGuestsObjects([]);
     }
   };
-
+  console.log(activeBoardObject, tasksPerBoard);
   return (
     <Context.Provider
       value={{

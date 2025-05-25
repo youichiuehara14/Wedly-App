@@ -138,7 +138,6 @@ export default function VendorPage() {
 
         closeModal();
       } catch (err) {
-        console.error('Vendor error:', err);
         toast.error(err.response?.data?.message || 'Failed to save vendor');
       }
     } else {
